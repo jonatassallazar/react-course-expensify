@@ -1,12 +1,11 @@
 // Export a stateless functinal component
 // render descrition, amount, createdAt
 import React from 'react'
-import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import numeral from 'numeral'
 
-const ExpenseListItem = ({ id, description, amount, createdAt }) => (
+export const ExpenseListItem = ({ id, description, amount, createdAt }) => (
     <div>
         <Link to={`/edit/${id}`}>
         <h3>{description}</h3>
@@ -20,4 +19,4 @@ const ExpenseListItem = ({ id, description, amount, createdAt }) => (
     </div>
 )
 
-export default connect()(ExpenseListItem)
+export default ExpenseListItem
