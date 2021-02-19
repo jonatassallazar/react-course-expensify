@@ -6,7 +6,7 @@ module.exports = (env, argv) => {
     const isProduction = env === 'production'
 
     return {
-        entry: './src/app.js',
+        entry: ['babel-polyfill','./src/app.js'],
         output: {
             path: path.join(__dirname, 'public'),
             filename: 'bundle.js'
@@ -22,6 +22,7 @@ module.exports = (env, argv) => {
                         {
                             loader: 'css-loader',
                             options: {
+                                url: false,
                                 sourceMap: true
                             }
                         },{
